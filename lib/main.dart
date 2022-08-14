@@ -2,6 +2,7 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:groceryapp/pages/get_started_page.dart';
+import 'package:groceryapp/pages/login_page.dart';
 import 'package:groceryapp/pages/splash_page.dart';
 import 'package:groceryapp/utils/theme.dart';
 
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '$SplashPage': (_) => const SplashPage(),
         '$GetStartedPage': (_) => const GetStartedPage(),
+        '$LoginPage': (_) => const LoginPage(),
       },
     );
   }

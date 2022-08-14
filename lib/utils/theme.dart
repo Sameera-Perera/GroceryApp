@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 const kPrimaryColor = Color(0xFF53B175);
 const kPrimaryColorText = Color(0xFF030303);
 const kColorWhite = Color(0xFFFFFFFF);
+const kColorLightGray = Color(0xFF7C7C7C);
 
 class PrimaryFont {
   static String fontFamily = 'Lato';
+
   static TextStyle medium(double size) {
     return TextStyle(
       fontFamily: fontFamily,

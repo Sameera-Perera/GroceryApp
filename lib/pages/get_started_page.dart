@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:groceryapp/pages/login_page.dart';
 import 'package:groceryapp/widgets/responsive_builder.dart';
 
 import '../utils/theme.dart';
@@ -11,7 +12,7 @@ class GetStartedPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = context.screenSize;
+    final _size = context.screenSize;
     return Scaffold(
       body: SafeArea(
           child: ResponsiveBuilder(
@@ -31,12 +32,12 @@ class GetStartedPage extends StatelessWidget {
               child: GetStartedButton(
                 fixedSize: MaterialStateProperty.all(
                   Size(
-                    size.width * 0.9,
-                    size.height * 0.07,
+                    _size.width * 0.9,
+                    _size.height * 0.07,
                   ),
                 ),
                 textStyle: MaterialStateProperty.all(
-                  PrimaryFont.medium(size.height * 0.02),
+                  PrimaryFont.medium(_size.height * 0.02),
                 ),
               ),
             ),
@@ -63,12 +64,12 @@ class GetStartedPage extends StatelessWidget {
                   child: GetStartedButton(
                     fixedSize: MaterialStateProperty.all(
                       Size(
-                        size.width * 0.4,
-                        size.height * 0.07,
+                        _size.width * 0.4,
+                        _size.height * 0.07,
                       ),
                     ),
                     textStyle: MaterialStateProperty.all(
-                      PrimaryFont.medium(size.height * 0.03),
+                      PrimaryFont.medium(_size.height * 0.03),
                     ),
                   ),
                 )
@@ -177,7 +178,9 @@ class GetStartedButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: () {
+        Navigator.of(context).pushNamed('$LoginPage');
+      },
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.all(kPrimaryColor),
         shape: MaterialStateProperty.all(
