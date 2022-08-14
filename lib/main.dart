@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:groceryapp/pages/get_started_page.dart';
 import 'package:groceryapp/pages/splash_page.dart';
+import 'package:groceryapp/utils/theme.dart';
 
 void main() {
   runApp(
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: kPrimaryColor,
       ),
       initialRoute: '$SplashPage',
       routes: {

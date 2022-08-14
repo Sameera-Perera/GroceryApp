@@ -17,7 +17,7 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   void _navigateToHome() async {
-    await Future.delayed(const Duration(seconds: 1));
+    await Future.delayed(const Duration(seconds: 3));
     // ignore: use_build_context_synchronously
     Navigator.pushReplacement(context,
         MaterialPageRoute(builder: (context) => const GetStartedPage()));
