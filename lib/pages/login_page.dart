@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:groceryapp/pages/signup_page.dart';
 import 'package:groceryapp/utils/theme.dart';
 import 'package:groceryapp/widgets/responsive_builder.dart';
 
@@ -185,7 +186,10 @@ class _LoginForm extends StatelessWidget {
                       children: [
                     TextSpan(
                       text: 'Signup',
-                      recognizer: TapGestureRecognizer()..onTap = () {},
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          Navigator.of(context).pushNamed('$SignupPage');
+                        },
                       style: PrimaryFont.bold(16).copyWith(
                         color: kPrimaryColor,
                       ),
