@@ -1,11 +1,14 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:groceryapp/models/auth_model.dart';
 import 'package:groceryapp/pages/get_started_page.dart';
+import 'package:groceryapp/pages/home_page.dart';
 import 'package:groceryapp/pages/login_page.dart';
 import 'package:groceryapp/pages/signup_page.dart';
 import 'package:groceryapp/pages/splash_page.dart';
 import 'package:groceryapp/utils/theme.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(
@@ -22,22 +25,32 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      useInheritedMediaQuery: true,
-      locale: DevicePreview.locale(context),
-      builder: DevicePreview.appBuilder,
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primaryColor: kPrimaryColor,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (ctx) => AuthModel(),
+        ),
+      ],
+      child: Consumer<AuthModel>(
+        builder: (ctx, auth, _) => MaterialApp(
+          useInheritedMediaQuery: true,
+          locale: DevicePreview.locale(context),
+          builder: DevicePreview.appBuilder,
+          debugShowCheckedModeBanner: false,
+          title: 'Flutter Demo',
+          theme: ThemeData(
+            primaryColor: kPrimaryColor,
+          ),
+          initialRoute: auth.isAuthentication ? '$HomePage' : '$SplashPage',
+          routes: {
+            '$SplashPage': (_) => const SplashPage(),
+            '$GetStartedPage': (_) => const GetStartedPage(),
+            '$LoginPage': (_) => const LoginPage(),
+            '$SignupPage': (_) => const SignupPage(),
+            '$HomePage': (_) => const HomePage(),
+          },
+        ),
       ),
-      initialRoute: '$SplashPage',
-      routes: {
-        '$SplashPage': (_) => const SplashPage(),
-        '$GetStartedPage': (_) => const GetStartedPage(),
-        '$LoginPage': (_) => const LoginPage(),
-        '$SignupPage': (_) => const SignupPage(),
-      },
     );
   }
 }

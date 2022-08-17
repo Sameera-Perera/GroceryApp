@@ -14,11 +14,13 @@
 - [x]  Signup Screen
     - [x]  Go to Login Screen
     - [x]  Responsive Signup Screen
-- [ ]  Connect Database
-- [ ]  Create account after click Signup
-    - [ ]  Create success
+- [x]  Connect Database
+- [x]  Create account after click Signup
+    - [x]  Create success
         - [ ]  Show notification success
-        - [ ]  Navigator Login
-    - [ ]  Create fail
-        - [ ]  Show notification fail
-        - [ ]  Request user input again
+        - [ ]  go to Home Screen if verify authentication when start app
+        - [x]  Navigator Login
+    - [x]  Create fail
+        - [x]  Show notification fail
+        - [x]  Request user input again
+- [ ]  Home Screen
