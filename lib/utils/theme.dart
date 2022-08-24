@@ -4,6 +4,8 @@ const kPrimaryColor = Color(0xFF53B175);
 const kPrimaryColorText = Color(0xFF030303);
 const kColorWhite = Color(0xFFFFFFFF);
 const kColorLightGray = Color(0xFF7C7C7C);
+const kColorGrayBg = Color(0xFFF5F5F5);
+const kColorBlackText = Color(0xFF000000);
 
 class PrimaryFont {
   static String fontFamily = 'Lato';

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:groceryapp/models/auth_model.dart';
 import 'package:groceryapp/models/http_exception.dart';
-import 'package:groceryapp/pages/home_page.dart';
+import 'package:groceryapp/pages/mainpage/main_page.dart';
 import 'package:groceryapp/pages/signup_page.dart';
 import 'package:groceryapp/utils/theme.dart';
 import 'package:groceryapp/widgets/responsive_builder.dart';
@@ -118,7 +118,7 @@ class _LoginFormState extends State<_LoginForm> {
         _authData['email']!,
         _authData['password']!,
       );
-      Navigator.of(context).pushReplacementNamed('$HomePage');
+      Navigator.of(context).pushReplacementNamed('$MainPage');
     } on HttpException catch (error) {
       //Bắt các lỗi xác định
       var errorMsg = 'Authentication failed.';

@@ -7,8 +7,8 @@ class ResponsiveBuilder extends StatelessWidget {
     required this.portrait,
     required this.landscape,
   }) : super(key: key);
-  final Widget portrait;
-  final Widget landscape;
+  final portrait;
+  final landscape;
 
   @override
   Widget build(BuildContext context) {
